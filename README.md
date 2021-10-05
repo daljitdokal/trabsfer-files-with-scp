@@ -5,7 +5,12 @@
 $user="xxxxx"
 $remoteMachine="xxxxxxxx"
 
-scp -r .\path\ $user@$remoteMachine:~/
+# Single file
+scp ./path/filename $user@$remoteMachine:~/path/
+
+# Full directory
+scp -r ./path/ $user@$remoteMachine:~/path/
+
 ```
 
 ### Remote to local
@@ -14,5 +19,9 @@ scp -r .\path\ $user@$remoteMachine:~/
 $user="xxxxx"
 $remoteMachine="xxxxxxxx"
 
-scp $user@$remoteMachine:~/filename  ./path
+# Single file
+scp $user@$remoteMachine:~/path/filename ./path
+
+# Full directory
+scp -r $user@$remoteMachine:~/path/ ./path
 ``` 
